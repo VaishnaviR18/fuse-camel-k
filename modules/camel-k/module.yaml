@@ -1,0 +1,36 @@
+schema_version: 1
+
+name: camel-k
+version: 1.0
+description: "Add & extract camel-k artifact"
+
+#envs:
+ # - name: CAMEL_K_TAG
+  #  value: camel-k-1.3.0.fuse-jdk11-800003
+
+#artifacts:
+ # - name: camel-k-camel-k
+  #  md5: 0300a8eb337447d4f908bd2ca5e60a6e
+   # target: camel-k-camel-k-1.3.0.fuse-jdk11-800003.tar.gz
+    #dest: /
+
+artifacts:
+  - name: camel-k-camel-k-tag
+    path: artifact/camel-k-camel-k-1.6.0.fuse-800024.tar.gz
+    target: camel-k-camel-k-1.6.0.fuse-800024.tar.gz
+    dest: /
+
+#packages:
+ # manager: microdnf
+  #content_sets:
+   # x86_64:
+    #- rhel-7-server-rpms
+  #install:
+  #- unzip
+  #- tar
+  #- rsync
+  #- shadow-utils
+  
+execute:
+#- script: configure.sh
+- script: install.sh

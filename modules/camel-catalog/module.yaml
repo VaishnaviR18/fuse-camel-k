@@ -1,0 +1,19 @@
+schema_version: 1
+
+name: camel-catalog
+version: 1.0
+description: "Add camel-catalog-runtime yaml file"
+
+#envs:
+#- name: "CAMEL_K_RUNTIME_VERSION"
+#  value: "1.6.0.fuse-jdk11-800004-redhat-00001"
+
+artifacts:
+    - name: "camel-catalog-1.9.0.fuse-800024-redhat-00001.yaml"
+      path: artifacts/camel-catalog-1.9.0.fuse-800024-redhat-00001.yaml
+      dest: /camel-k-camel-k-1.6.0.fuse-800024/deploy
+  
+execute:
+#- script: configure.sh
+#- script: backward_compatibility.sh  
+- script: install.sh

@@ -1,0 +1,14 @@
+schema_version: 1
+
+artifacts:
+- name: "apache-maven"
+  sha512: "c35"
+  url: "https://archive.apache.org/dist/maven/maven-/3.6.7/binaries/apache-maven-3.6.7-bin.tar.gz"
+  target: "apache-maven-3.6.7-bin.tar.gz"
+  dest: "/"
+
+- name: "apache-camel-k-runtime"
+  sha512: "bhu8"
+  url: "http://indy.psi.redhat.com/api/content/maven/group/redhat-builds/org/apache/camel/k/apache-camel-k-runtime/1.7.9/apache-camel-k-runtime-1.7.9-m2.zip"
+  target: "apache-camel-k-runtime-1.7.9-m2.zip"
+  dest: "/tmp/"

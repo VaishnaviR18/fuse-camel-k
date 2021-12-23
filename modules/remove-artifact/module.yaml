@@ -1,0 +1,12 @@
+schema_version: 1
+
+name: remove-artifact
+version: 1.0
+description: "Removes artifact"
+
+#envs:
+#- name: CAMEL_K_RUNTIME_VERSION
+#  value: 1.6.0.fuse-jdk11-800004-redhat-00001
+    
+execute:
+- script: run.sh

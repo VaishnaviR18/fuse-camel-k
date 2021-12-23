@@ -1,0 +1,18 @@
+schema_version: 1
+
+name: build-camel-k
+version: 1.0
+description: "Build camel-k"
+
+#envs:
+#- name: "CAMEL_K_RUNTIME_VERSION"
+ # value: "1.6.0.fuse-jdk11-800004-redhat-00001"
+#- name: CAMEL_K_TAG
+ # value: camel-k-1.3.0.fuse-jdk11-800003
+#- name: IMAGE_NAME
+ # value: registry.redhat.io/integration-tech-preview/camel-k-rhel8-operator
+#- name: CAMEL_K_VERSION
+ # value: 1.3.0  
+
+execute:
+- script: build.sh

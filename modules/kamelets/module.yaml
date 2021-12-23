@@ -1,0 +1,11 @@
+schema_version: 1
+
+name: kamelets
+version: 1.0
+description: "Add kamalets"
+
+artifacts:
+  - name: kamelets
+    path: artifacts/kamelets
+    target: kamelets
+    dest: /kamelets

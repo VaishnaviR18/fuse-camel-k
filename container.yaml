@@ -1,0 +1,4 @@
+platforms:
+  only:
+  - x86_64  
+image_build_method: imagebuilder

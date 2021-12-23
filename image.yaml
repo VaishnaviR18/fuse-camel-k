@@ -1,0 +1,85 @@
+- name: "builder"
+  from: "registry-proxy.engineering.redhat.com/rh-osbs/rhel8-go-toolset:1.15.14-10"
+  version: ""
+
+  modules:
+    repositories:
+      - name: modules
+        path: modules
+    install:
+      - name: environ
+      - name: camel-k
+      - name: vendor
+      - name: kamelets
+      - name: apache-maven
+      - name: camel-catalog
+      - name: settings
+      - name: build-camel-k
+      - name: licenses
+ 
+
+#final image
+
+- name: &name "integration/camel-k-rhel8-operator"
+  from: "registry-proxy.engineering.redhat.com/rh-osbs/ubi8-openjdk-11:latest"
+  version: &version "1.6.0"
+  description: "Red Hat Integration - Camel K is a lightweight integration platform, born on Kubernetes, with serverless superpowers."
+
+  labels:
+  - name: "com.redhat.component"
+    value: "fuse-camel-k-operator-container"
+  - name: "maintainer"
+    value: "Otavio Piske <opiske@redhat.com>"   
+  - name: "io.k8s.display-name"
+    value: "Red Hat Integration - Camel K"
+  - name: "io.openshift.tags"
+    value: "fuse,integration,camel"
+  - name: "fuse.camel.quarkus.version"
+    value: "2.2.0.fuse-800021-redhat-00004"
+  - name: "fuse.camel.version"
+    value: "3.11.1.fuse-800025-redhat-00002"
+  - name: "fuse.camel-k.runtime.version"
+    value: "1.9.0.fuse-800024-redhat-00001"
+  - name: "fuse.camel-k.tag"
+    value: "camel-k-1.6.0.fuse-800024"
+
+  artifacts:
+  - image: builder
+    path: /opt/apache-maven-3.6.3
+    dest: /opt/
+
+  - image: builder
+    path: /go/src/github.com/apache/camel-k/kamel
+    dest: /usr/local/bin/
+
+  - image: builder
+    path: /go/src/github.com/apache/camel-k/licenses
+    dest: /root/licenses/fuse-camel-k/
+
+  - image: builder
+    path: /kamelets
+    dest: /
+
+  modules:
+    repositories:
+      - name: modules
+        path: modules
+    install:
+      - name: environ
+      - name: user
+      - name: apache-camel-k-runtime
+      - name: remove-artifact   
+      - name: user
+
+  run:
+    user: 185 
+    cmd: 
+      - "kamel"
+      - "operator"    
+
+#osbs:
+ # configuration:
+  #  container_file: container.yaml
+   #   repository:
+    #        name: containers/fuse-camel-k
+     #       branch: fuse-8.0-openshift-rhel-8 branch

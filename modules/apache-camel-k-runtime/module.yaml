@@ -1,0 +1,22 @@
+schema_version: 1
+
+name: apache-camel-k-runtime
+version: 1.0
+description: "Add & extract apache-camel-k-runtime artifacts."
+
+#envs:
+#- name: "CAMEL_K_RUNTIME_VERSION"
+ # value: "1.6.0.fuse-jdk11-800004-redhat-00001"
+run:
+  user: 185
+  
+artifacts:
+- name: "apache-camel-k-runtime"
+  sha512: "e22b25ca0af2282759f25915e0b771cd919f16cdb1fba2a43c83db4e12ac7f678e921e8ccc8c5597aea6aa9ffa8c94fc85fc27113530ef268cff8301895ce25e"
+  url: "http://indy.psi.redhat.com/api/content/maven/group/redhat-builds/org/apache/camel/k/apache-camel-k-runtime/1.9.0.fuse-800024-redhat-00001/apache-camel-k-runtime-1.9.0.fuse-800024-redhat-00001-m2.zip"
+  target: apache-camel-k-runtime-1.9.0.fuse-800024-redhat-00001-m2.zip
+  dest: /tmp
+
+execute:
+- script: install.sh
+  

@@ -1,0 +1,27 @@
+schema_version: 1
+
+name: environ
+version: 1.0
+description: "Add envs"
+
+envs:
+  - name: GO111MODULE
+    value: off
+  - name: GOPATH
+    value: /go
+  - name: CAMEL_K_VERSION
+    value: "1.6.2"
+  - name: CAMEL_K_TAG
+    value: "camel-k-1.6.0.fuse-800024"
+  - name: CAMEL_K_RUNTIME_VERSION
+    value: "1.9.0.fuse-800024-redhat-00001"
+  - name: CAMEL_QUARKUS_VERSION
+    value: "2.2.0.fuse-800021-redhat-00004"
+  - name: CAMEL_VERSION
+    value: "3.11.1.fuse-800025-redhat-00002"
+  - name: MAVEN_VERSION
+    value: "3.6.3"
+  - name: RHI_VERSION
+    value: "2021.Q4"
+  - name: IMAGE_NAME
+    value: "registry.redhat.io/integration/camel-k-rhel8-operator"

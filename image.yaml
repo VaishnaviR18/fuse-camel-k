@@ -77,9 +77,9 @@
       - "kamel"
       - "operator"    
 
-#osbs:
- # configuration:
-  #  container_file: container.yaml
-   #   repository:
-    #        name: containers/fuse-camel-k
-     #       branch: fuse-8.0-openshift-rhel-8 branch
+osbs:
+      configuration:
+            container_file: container.yaml
+      repository:
+            name: containers/fuse-camel-k
+            branch: private-ci-camelk-1.6-openshift-rhel-8
